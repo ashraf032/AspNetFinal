@@ -1,0 +1,35 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div role="tabpanel" class="tab-pane fade in active" id="about-me">
+    <div class="inside-sec">
+        <!-- BIO AND SKILLS -->
+        <h5 class="tittle">About Me</h5>
+
+        <!-- Blog -->
+        <section class="about-me padding-top-10">
+
+            <!-- Personal Info -->
+            @await Component.InvokeAsync("ProfessionalDetails")
+
+
+            <!-- I’m Web Designer -->
+            <h5 class="tittle">I’m @Model.Speciality.Name</h5>
+            <div class="padding-20">
+                @Model.Speciality.Bio
+            </div>
+
+            <!-- Services -->
+            <h5 class="tittle">Services</h5>
+            @await Component.InvokeAsync("Services")
+
+            
+
+            <!-- Skills -->
+            <h5 class="tittle">Skills</h5>
+            @await Component.InvokeAsync("SpecialSkills")
+        </section>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@model List<Service>
+<div class="row service-flex padding-20 margin-top-50">
+
+    <!-- Icon -->
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 text-center">
+            <div class="icon-box i-large ib-black">
+                <div class="ib-icon"> <i class="fa @item.IconPath"></i> </div>
+                <div class="ib-info">
+                    <h4 class="h6">@item.Name</h4>
+                    @Html.Raw(@item.Description)
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

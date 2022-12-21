@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Experience>
+
+
+
+
+<!-- Academic Background -->
+<div class="inside-sec margin-top-30">
+    @if((Model.Any(e=>e.ExperienceType==ExperienceType.Academic))){
+        <h5 class="tittle">Academic Background</h5>
+        <div class="padding-30 exp-history">
+
+            @foreach (var item in Model)
+            {
+                var endYear = item.EndDate?.ToString("yyyy,dd mmm").Substring(0, 4);
+                var startYear = item.StartDate.ToString("yyyy,dd mmm").Substring(0, 4);
+                if (item.EndDate==null)
+                {
+                    endYear = "present";
+                }
+                <div class="exp">
+                    <div class="media-left"> <span class="sun">@startYear - @endYear</span> </div>
+                    <div class="media-body">
+                        <h6>@item.Name</h6>
+                        <p>@item.CompanyName</p>
+                        <p class="margin-bottom-10">@item.CompanyLocation</p>
+                        @Html.Raw(item.Description)
+                    </div>
+                </div>
+            }
+
+        </div>
+    }
+</div>
+
+<!-- Professional Experience -->
+<div class="inside-sec margin-top-30">
+    @if ((Model.Any(e => e.ExperienceType == ExperienceType.Professional)))
+    {
+        <h5 class="tittle">Professional Experience</h5>
+        <div class="padding-30 exp-history">
+
+            @foreach (var item in Model)
+            {
+                var endYear = item.EndDate?.ToString("yyyy,dd mmm").Substring(0, 4);
+                var startYear = item.StartDate.ToString("yyyy,dd mmm").Substring(0,4);
+                if (item.EndDate==null)
+                {
+                    endYear = "present";
+                }
+                <div class="exp">
+                    <div class="media-left"> <span class="sun">@startYear - @endYear</span> </div>
+                    <div class="media-body">
+
+                        <!-- COmpany Logo -->
+                        <div class="company-logo"> <img src="~/assets/images/@item.CompanyImagePath" alt=""> </div>
+                        <h6>@item.Name</h6>
+                        <p>@item.CompanyName</p>
+                        <p class="margin-bottom-10">@item.CompanyLocation</p>
+                        @Html.Raw(item.Description)
+                    </div>
+                </div>
+            }
+
+        </div>
+    }
+
+</div>

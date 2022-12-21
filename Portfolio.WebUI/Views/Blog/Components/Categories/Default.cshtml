@@ -1,0 +1,8 @@
+﻿@model List<Category>
+<ul class="tabs portfolio-filter text-center margin-bottom-30">
+    <li class="filter" data-filter="all">all</li>
+    @foreach (var item in Model)
+    {
+        <li class="filter" data-filter=".@item.Name">@item.Name</li>
+    }
+</ul>

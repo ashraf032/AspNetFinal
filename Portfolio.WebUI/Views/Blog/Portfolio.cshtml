@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Portfolio";
+}
+<div role="tabpanel" class="tab-pane fade" id="portfolio">
+    <div class="inside-sec">
+        <!-- BIO AND SKILLS -->
+        <h5 class="tittle">PORTFOLIO</h5>
+
+        <!-- PORTFOLIO -->
+        <section class="portfolio padding-top-50 padding-bottom-50">
+            <!-- Work Filter -->
+            @await Component.InvokeAsync("Categories")
+
+            <!-- PORTFOLIO ITEMS -->
+            @await Component.InvokeAsync("ProjectItems")
+        </section>
+    </div>
+</div>
+@section addcss{
+    <style>
+        .tab-content > .tab-pane {
+            display: block !important;
+        }
+
+        .fade {
+            opacity: 1 !important;
+        }
+    </style>
+}

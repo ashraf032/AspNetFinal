@@ -1,0 +1,50 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Resume";
+}
+
+<div role="tabpanel" class="tab-pane fade" id="resume">
+    <div class="inside-sec">
+        <!-- BIO AND SKILLS -->
+        <h5 class="tittle">Bio & Skills</h5>
+        <div class="bio-info padding-30">
+
+            @Html.Raw(Model.Bio)
+
+            <div class="skills">
+
+                @await Component.InvokeAsync("HardSkills")
+
+
+                @await Component.InvokeAsync("SoftSkills")
+
+                <!-- Follow ethical -->
+                <div class="ethical">
+                    @if (Model.Abilities.Any())
+                    {
+                        <h6>Follow ethical work practices</h6>
+                        @foreach (var item in Model.Abilities)
+                        {
+                            <a href="javascript:void(0)">@item.Name</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Experience*@
+    @await Component.InvokeAsync("Experiences")
+</div>
+@section addcss{
+    <style>
+        .tab-content > .tab-pane {
+            display: block !important;
+        }
+
+        .fade {
+            opacity: 1 !important;
+        }
+    </style>
+}
+

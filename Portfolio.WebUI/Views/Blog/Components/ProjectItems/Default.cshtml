@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Project>
+<div id="Container" class="item-space row col-3">
+    @foreach (var item in Model)
+    {
+        <!-- ITEM -->
+        <article class="portfolio-item mix pf-@item.Category.Name">
+            <div class="portfolio-image">
+                <a href="#."> <img class="img-responsive" alt="Open Imagination" src="~/uploads/images/@item.ImagePath"> </a>
+                <div class="portfolio-overlay style-4">
+                    <div class="detail-info">
+                        <div class="position-center-center">
+                            <h3 class="no-margin">@item.Name</h3>
+                            @*https://www.@item.OnlinePath*@
+                            <span><a href="#.">@item.Category.Name</a></span> <a class="go">
+                                <i class="fa fa-search"></i>
+                            </a>
+                            <a href="https://www.@item.OnlinePath" class="go clipboard">
+                                <i class="fa fa-link copyLink" data-copy="@item.OnlinePath"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    }
+
+</div>
+@section addjs{
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+                //$(document).ready(function () {
+
+                //    $.(fn.copy).click = function (ev) {
+                //        ev.preventDefault();
+                //        console.log(ev);
+
+
+                //        //navigator.clipboard.writeText($(event.currentTarget).closest("a").attr("href"));
+
+                //    };
+                //});
+
+    </script>
+
+}
+    @*@section addjs{
+    <script>
+        //let span = document.querySelectorAll(".fa-Link")
+        //span.forEach(element => {
+        //    element.addEventListener("click", function (event) {
+        //        event.preventDefault();
+        //        let anchor = event.currentTarget.parentElement;
+        //        let href = anchor.getAttribute("href")
+        //        navigator.clipboard.writeText(href);
+
+        //    })
+        //});
+        function copy(event){
+            console.log(event);
+            event.preventDefault();
+
+
+            navigator.clipboard.writeText($(event.currentTarget).closest("a").attr("href"););
+        }
+    </script>
+
+}*@
+    @*<script>
+        $(document).ready(function () {
+            $("a[href*='https://www.']").click(event){
+                event.preventDefault();
+                navigator.clipboard.writeText($(".copyLink").attr("href"))
+            }
+
+        })
+    </script>*@
+
+    @*$(".copyLink").click(function (event) {
+                event.preventDefault();
+                let anchor = event.currentTarget.parentElement;
+                let href = anchor.attr("href")
+                navigator.clipboard.writeText(href);
+            })*@

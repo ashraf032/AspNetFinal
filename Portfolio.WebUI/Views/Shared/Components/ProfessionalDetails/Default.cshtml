@@ -1,0 +1,35 @@
+﻿@model User
+
+
+<ul class="personal-info">
+   
+        <li>
+            <p> <span> Name</span> @Model.Name, @Model.Surname </p>
+        </li>
+        <li>
+            <p> <span> Age</span> @Model.Age Years </p>
+        </li>
+        <li>
+            <p> <span> Location</span> @Model.Location </p>
+        </li>
+        @if (Model.Experience != null)
+        {
+
+            <li>
+                <p> <span> Experience</span> @Model.Experience Years </p>
+            </li>
+            <li>
+                <p> <span> Degree</span> @Model.Degree </p>
+            </li>
+            <li>
+            <p> <span> Career Level</span> @Model.CareerLevel </p>
+            </li>
+        }
+        <li>
+        <p> <span> Phone</span> @Model.Phone </p>
+        </li>
+        <li>
+            <p><span> E-mail</span>@Model.Email</p>
+        </li>
+    
+</ul>

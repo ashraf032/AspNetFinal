@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Skill>
+@if (Model.Any())
+{
+    <h5 class="margin-top-30">Soft Skills</h5>
+
+    <div class="panel-group accordion" id="accordion">
+        @foreach (var item in Model)
+        {
+            <div class="panel panel-default">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <!-- PANEL HEADING -->
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@item.Id" class="collapsed"> @item.Name</a> </h4>
+                        </div>
+                    </div>
+
+                    <!-- Skillls Bars -->
+                    <div class="col-sm-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="@item.Percent" aria-valuemin="0" aria-valuemax="100" style="width: @item.Percent%;"> <span class="sr-only">@item.Percent% Complete</span> </div>
+                        </div>
+
+                        <!-- Skillls Text -->
+                        <div id="collapse-@item.Id" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                @Html.Raw(item.Description)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+

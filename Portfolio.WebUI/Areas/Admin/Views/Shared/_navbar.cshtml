@@ -1,0 +1,90 @@
+﻿<nav class="pcoded-navbar">
+    <div class="pcoded-inner-navbar main-menu">
+        <div class="pcoded-navigatio-lavel">Navigation</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-controller="Home" asp-action="Index">
+                    <span class="pcoded-micon"><i class="feather icon-menu"></i></span>
+                    <span class="pcoded-mtext">Main Page</span>
+                </a>
+            </li>
+            <li class="pcoded-hasmenu active pcoded-trigger">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                    <span class="pcoded-mtext">Sheets</span>
+                </a>
+                <ul class="pcoded-submenu ">
+                    <li>
+                        <a asp-controller="Ability" asp-action="Index">
+                            <span class="pcoded-mtext">Abilities</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Category" asp-action="Index">
+                            <span class="pcoded-mtext">Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="" asp-action="">
+                            <span class="pcoded-mtext">Comments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Contact" asp-action="Index">
+                            <span class="pcoded-mtext">Contacts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Experience" asp-action="Index">
+                            <span class="pcoded-mtext">Experiences</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Project" asp-action="Index">
+                            <span class="pcoded-mtext">Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Service" asp-action="Index">
+                            <span class="pcoded-mtext">Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Skills" asp-action="Index">
+                            <span class="pcoded-mtext">Skills</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Speciality" asp-action="Index">
+                            <span class="pcoded-mtext">Speciality</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="User" asp-action="Index">
+                            <span class="pcoded-mtext">User</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="pcoded-hasmenu ">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                    <span class="pcoded-mtext">Blogs</span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li>
+                        <a asp-controller="Blog" asp-action="Index">
+                            <span class="pcoded-mtext">Published blogs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="" asp-action="">
+                            <span class="pcoded-mtext">Deleted blogs</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>

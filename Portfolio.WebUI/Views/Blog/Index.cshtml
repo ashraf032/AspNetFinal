@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Blog>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div role="tabpanel" class="tab-pane fade" id="blog">
+    <div class="inside-sec">
+        <!-- BIO AND SKILLS -->
+        <h5 class="tittle">BLOG</h5>
+
+        <!-- Blog -->
+        <section class="blog blog-page padding-20 padding-top-50 padding-bottom-50 ">
+
+            <!-- Blog Post -->
+            @foreach (var item in Model)
+            {
+                <article>
+                    <img class="img-responsive" src="~/uploads/images/@item.ImagePath" alt="">
+                    <div class="post-info">
+                        <div class="post-in">
+                            <div class="extra"> <span><i class="icon-calendar"></i>@item.CreatedDate.ToString("MMM dd,yyyy")</span> <span class="margin-left-15"><i class="icon-user"></i>@item.User.Name</span> <span class="margin-left-15"><i class="icon-bubbles"></i> Featured</span></div>
+                            <a href="#." class="tittle-post"> @item.Title </a>
+                            <div>
+                                @Html.Raw(item.Description)
+                            </div>
+                            <a asp-action="details" asp-route-id="@item.Id" class="btn-1">Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            }
+
+
+            <!-- Pagination -->
+            <ul class="pagination">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+@section addcss{
+    <style>
+        .tab-content > .tab-pane {
+            display: block !important;
+        }
+
+        .fade {
+            opacity: 1 !important;
+        }
+    </style>
+}
+
